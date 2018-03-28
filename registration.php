@@ -1,23 +1,7 @@
 
 <?php 
-	$nameErr = $emailErr = $passErr = $genderErr = $typeErr = $checkErr = ""; 
 	
-	if($_SERVER["REQUEST_METHOD"] == "POST")
-	{
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$gender = $_POST['gender'];
-		$pass =  $_POST['pass'];
-		$cpass =  $_POST['cpass'];
-		$uType =  $_POST['uType'];
-		
-		
-		
-	}
-
-	
-	
-	
+	require ("validation.php");
 	include "header.php";
 ?>
 
