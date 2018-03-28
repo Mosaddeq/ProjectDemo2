@@ -1,4 +1,5 @@
 <?php
+include ("dbconnect.php");
 $nameErr = $emailErr = $passErr = $genderErr = $typeErr = $checkErr = ""; 
 	
 if($_SERVER["REQUEST_METHOD"] == "POST")
