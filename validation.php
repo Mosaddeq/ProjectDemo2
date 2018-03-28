@@ -1,5 +1,17 @@
 <?php
-$is_err = 0;
+$nameErr = $emailErr = $passErr = $genderErr = $typeErr = $checkErr = ""; 
+	
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $gender = $_POST['gender'];
+    $pass =  $_POST['pass'];
+    $cpass =  $_POST['cpass'];
+    $uType =  $_POST['uType'];
+
+    $is_err = 0;
+
 if(empty ($_POST["name"])){
     $nameErr = "Field required";
     $is_err = 1;
@@ -44,6 +56,6 @@ if(empty ($_POST["name"])){
         
         mysqli_query($conn,$sql);
         mysqli_close($conn);
-        //header('location: login.php');	
+       
     }
 ?>
