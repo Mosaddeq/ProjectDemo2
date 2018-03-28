@@ -1,7 +1,10 @@
 
 <?php 
-	
 	require ("validation.php");
+
+	
+	
+	
 	include "header.php";
 ?>
 
@@ -95,6 +98,7 @@
 				<span class="error">* <?php echo $typeErr;?></span>
 				</select>
 			</fieldset>
+			<br> <br>
 			</td>
 			
 			<tr>
