@@ -58,4 +58,5 @@ if(empty ($_POST["name"])){
         mysqli_close($conn);
        
     }
+}
 ?>
