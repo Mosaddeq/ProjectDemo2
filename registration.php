@@ -1,6 +1,8 @@
 
 <?php 
 	require ("validation.php");
+	require ("dbconnect.php");
+
 
 	
 	
@@ -91,7 +93,7 @@
 				<td colspan="3">
 			<fieldset>
 				<legend>User Type</legend>
-				<select id="uType" value="combo" class="form-control" name="uType" >
+				<select id="uType" value="combo"  name="uType" >
 				<option value=""></option>
 				<option value="Instructor">Instructor</option>
 				<option value="Student">Student</option>
