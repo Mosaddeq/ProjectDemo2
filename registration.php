@@ -2,11 +2,7 @@
 <?php 
 	require ("validation.php");
 	require ("dbconnect.php");
-
-
-	
-	
-	
+	include ("regfunc.php");
 	include "header.php";
 ?>
 
