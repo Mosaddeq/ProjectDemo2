@@ -15,7 +15,7 @@ for($i=1;$i<=$rowcount;$i++) //to fetch all data
 }
 ?>
 <tr>
-<td><a href="upload/"><?php echo $row["file"] ?>"><?php echo $row["file"] ?></td>
+<td><a href="uploads/"><?php echo $row["file"] ?>"><?php echo $row["file"] ?></td>
 </tr>
 if()
 <a href="instructor_home.php">Back</a>
