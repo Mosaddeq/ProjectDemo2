@@ -1,9 +1,9 @@
 
 <?php 
-	require ("validation.php");
-	require ("dbconnect.php");
-	include ("regfunc.php");
-	include ("header.php");
+	require ("includes/validation.php");
+	require ("includes/dbconnect.php");
+	include ("includes/regfunc.php");
+	include ("includes/header.php");
 ?>
 
 <html>
@@ -76,8 +76,8 @@
 				<td colspan="3">
 					<fieldset>
 						<legend>Gender</legend>    
-						<input name="gender" type="radio">Male
-						<input name="gender" type="radio">Female
+						<input name="gender" type="radio" value="Male">Male
+						<input name="gender" type="radio" value="Female">Female
 						<span class="error">* <?php echo $genderErr;?></span>
 						
 					</fieldset>
@@ -86,7 +86,7 @@
 			</tr>		
 			<tr><td colspan="4"><hr/></td></tr>
 			<tr>
-				<td colspan="3">
+				<td colspan="4">
 			<fieldset>
 				<legend>User Type</legend>
 				<select id="uType" value="combo"  name="uType" >
@@ -115,5 +115,5 @@
 </body>
 </html>
 <?php 
-	include "footer.php";
+	include ("includes/footer.php");
 ?>
