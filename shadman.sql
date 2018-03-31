@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2018 at 09:11 PM
+-- Generation Time: Mar 31, 2018 at 11:53 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -25,6 +25,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `gender` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `utype` varchar(100) NOT NULL,
+  `cInfo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`name`, `email`, `gender`, `password`, `utype`, `cInfo`) VALUES
+('asd', 'asd@gmail.com', 'Male', 'pass', 'Admin', 'asd');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reg`
 --
 
@@ -33,16 +55,19 @@ CREATE TABLE `reg` (
   `email` varchar(100) NOT NULL,
   `gender` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `uType` varchar(100) NOT NULL
+  `uType` varchar(100) NOT NULL,
+  `cInfo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reg`
 --
 
-INSERT INTO `reg` (`name`, `email`, `gender`, `password`, `uType`) VALUES
-('sam', 'shadmanmosaddeq@gmail.com', 'Male', 'asd123', 'Instructor'),
-('Shadman Mosaddeq', 'shadmanmosaddeq@gmail.com', 'Male', 'zzz123', 'Student');
+INSERT INTO `reg` (`name`, `email`, `gender`, `password`, `uType`, `cInfo`) VALUES
+('dexter', 'dexter@gmail.com', 'Male', 'dex', 'Instructor', ''),
+('lifesucks', 'lifesucks@aiub.com', 'Male', 'ls', 'Instructor', 'sucks'),
+('sam', 'sami.tauseef@gmail.com', 'Male', 'sam', 'Instructor', ''),
+('Shadman Mosaddeq', 'shadmanmosaddeq@gmail.com', 'Male', 'zzz123', 'Student', '');
 
 -- --------------------------------------------------------
 
@@ -60,10 +85,16 @@ CREATE TABLE `upload` (
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`email`,`password`);
+
+--
 -- Indexes for table `reg`
 --
 ALTER TABLE `reg`
-  ADD PRIMARY KEY (`email`,`password`);
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Indexes for table `upload`
