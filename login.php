@@ -16,10 +16,10 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     $row = mysqli_fetch_assoc($result); //fetches a result row as an associative array.
     //$counti = mysqli_num_rows($resulti); //admin
     //$row = mysqli_fetch_assoc($resulti);
-    $count = mysqli_num_rows($resulti);
-    $row = mysqli_fetch_assoc($resulti);
+    $counti = mysqli_num_rows($resulti);
+    $rowi = mysqli_fetch_assoc($resulti);
 
-    If(count($row)>0 && $row['uType']=='Instructor')
+    if(count($row)>0 && $row['uType']=='Instructor')
     {
 		//echo 'yaaaa';
 		$_SESSION['email_check']=$email;      //initializing sessions
@@ -35,12 +35,12 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 		$_SESSION['uType']= 'Student';
         header('location: student_home.php');
     }
-    else if(count($row)>0 && $row['utype']=='Admin')
+    if(count($rowi)>0 && $rowi['utype']=='Admin')
 	{
 		//echo 'boo';
-		$_SESSION['email']=$email;
-		$_SESSION['password']=$pass;
-		$_SESSION['uType']= 'Student';
+		$_SESSION['email_check']=$email;
+		$_SESSION['login_password']=$pass;
+		$_SESSION['utype']= 'Admin';
         header('location: admin_home.php');
     }
 }
