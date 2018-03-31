@@ -7,16 +7,23 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     
-    $sql = "SELECT * FROM reg WHERE email='$email' and password = '$pass'";
+    $sql = "SELECT * FROM reg WHERE email='$email' and password = '$pass'"; //datas for normal users
+    $sqli = "SELECT * FROM admin WHERE email='$email' and password = '$pass'"; //for admin only
     $result = mysqli_query($conn,$sql);
-	$count = mysqli_num_rows($result);
-	$row = mysqli_fetch_assoc($result); //fetches a result row as an associative array. 
+    $resulti = mysqli_query($conn,$sqli); //admin
+
+    $count = mysqli_num_rows($result);
+    $row = mysqli_fetch_assoc($result); //fetches a result row as an associative array.
+    //$counti = mysqli_num_rows($resulti); //admin
+    //$row = mysqli_fetch_assoc($resulti);
+    $count = mysqli_num_rows($resulti);
+    $row = mysqli_fetch_assoc($resulti);
 
     If(count($row)>0 && $row['uType']=='Instructor')
     {
 		//echo 'yaaaa';
 		$_SESSION['email_check']=$email;      //initializing sessions
-		$_SESSION['password']=$pass;
+		$_SESSION['login_password']=$pass;
 		$_SESSION['uType']= 'Instructor';
         header('location: instructor_home.php');
     }
@@ -27,7 +34,15 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 		$_SESSION['password']=$pass;
 		$_SESSION['uType']= 'Student';
         header('location: student_home.php');
-	}
+    }
+    else if(count($row)>0 && $row['utype']=='Admin')
+	{
+		//echo 'boo';
+		$_SESSION['email']=$email;
+		$_SESSION['password']=$pass;
+		$_SESSION['uType']= 'Student';
+        header('location: admin_home.php');
+    }
 }
 
 include("includes/header.php")
@@ -52,7 +67,7 @@ include("includes/header.php")
         <hr />
 		<input name="remember" type="checkbox">Remember Me
 		<br/><br/>
-        <input type="submit" name="submit" value="Submit">        
+        <input type="submit" name="submit" value="Login">        
 		<a href="forget.php">Forgot Password?</a>
     </form>
 </fieldset>
