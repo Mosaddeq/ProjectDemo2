@@ -11,16 +11,15 @@
     $sqll="select * from reg where email = '$e_check'";
     $result = mysqli_query($conn,$sqll);
     $row = mysqli_fetch_assoc($result);
-    If(count($row)>0){
+    if(count($row)>0){
     $sql = "UPDATE reg SET name='$name' or email='$email'";
     mysqli_query($conn,$sql);
+    $login_session = $row['name'];
+    $login_session1 = $row['email'];
+    
     }
     
 }
-
-
-
-
 
 ?>
 <fieldset>
