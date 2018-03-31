@@ -90,7 +90,7 @@
 			<fieldset>
 				<legend>User Type</legend>
 				<select id="uType" value="combo"  name="uType" >
-				<option value=""></option>
+				<option value=""></option>	
 				<option value="Instructor">Instructor</option>
 				<option value="Student">Student</option>
 				<span class="error">* <?php echo $typeErr;?></span>
@@ -100,6 +100,12 @@
 			</td>
 			
 			<tr>
+			<tr>
+			<td colspan="8">
+			<legend>Info:</legend>
+			<textarea cols="48" rows="5" name="cInfo" placeholder=""></textarea>
+			</td>
+			</tr>
 		<td><input id="check"  type="checkbox" name="check" value="checked" placeholder="" />Yes,I've read the <a href="terms and conditions.html">terms and conditions </a> and i agree 
 		<span class="error">* <?php echo $checkErr;?></span>
 		</td>
